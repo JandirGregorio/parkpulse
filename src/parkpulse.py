@@ -268,7 +268,12 @@ def get_menu_choice():
         4. Return the choice, or print the message
            and return None.
     """
-    pass
+    choice = input('Choose an option (1-5):').strip()
+
+    if len(choice) == 1 and choice in '12345':
+        return choice
+    print('Please enter a number from 1 to 5')
+    return None
 
 
 def get_yes_no(prompt):
@@ -297,7 +302,13 @@ def get_yes_no(prompt):
         3. Return True, False, or None using the
            rules above.
     """
-    pass
+    answer = input(prompt).strip().lower()
+    if answer == 'y' or answer == 'yes':
+        return True
+    if answer == 'n' or answer == 'no':
+        return False
+    print('Please answer Y or N.')
+    return None
 
 
 def get_numeric_input(prompt):
